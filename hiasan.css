@@ -46,14 +46,6 @@ html {
     }
 }
 
-@media screen and (max-width: 499px) {
-    .title, .titleContainer, .titleContainer-muter, .layar, section {
-        height: 135vh;
-    }
-    
-}
-
-
 body {
     background-color: rgb(224, 225, 221);
     z-index: -8;
@@ -314,6 +306,21 @@ section {
     }
     
 }
+
+@media screen and (max-width: 499px) {
+    .title, .titleContainer, .titleContainer-muter, .titleBelakang, section {
+        height: 135vh;
+    }
+    
+}
+
+@media screen and (max-width: 375px) {
+    .title, .titleContainer, .titleContainer-muter, .titleBelakang, section {
+        height: 175vh;
+    }
+
+}
+
 
 .titleKotak {
     width: 100%;
