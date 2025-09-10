@@ -21,6 +21,7 @@
 html {
     width: max-content;
     height: 100%;
+    min-height: 100%;
     scrollbar-color: goldenrod rgba(105, 116, 128, .2);
     color: white;
     font-family: "Lexend Giga", sans-serif;
@@ -34,6 +35,24 @@ html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
+
+@media screen and (max-width: 499px) {
+    html {
+        height: 200%;
+    }
+
+    body {
+        scrollbar-color: transparent transparent;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .title, .titleContainer, .titleContainer-muter, .layar, section {
+        height: 135vh;
+    }
+    
+}
+
 
 body {
     background-color: rgb(224, 225, 221);
@@ -81,7 +100,7 @@ section {
     background-color: var(--base-color);
     text-align: center;
     width: 100%;
-    height: 100vh;
+    height: 135vh;
     margin-top: 0;
     transition: 1.2s ease-in-out;
     z-index: 1;
@@ -292,13 +311,6 @@ section {
 @media screen and (min-width: 400px) {
     .title {
         height: 120vh;
-    }
-    
-}
-
-@media screen and (max-width: 400px) {
-    .title, .titleContainer, .titleContainer-muter, .layar, section {
-        height: 135vh;
     }
     
 }
