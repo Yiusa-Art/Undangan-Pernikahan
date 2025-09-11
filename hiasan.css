@@ -1294,12 +1294,17 @@ section {
     margin-top: 0;
 }
 
-.kotakJam h4 a {
+.kotakJam a {
+    cursor: pointer;
     margin: 0;
+    margin-bottom: 1rem;
     font-size: 2vh;
     text-decoration: none;
     cursor: pointer;
     color: gold;
+    text-decoration: none;
+
+    z-index: 10;
 }
 
 .kotakJam h5 {
@@ -1374,6 +1379,7 @@ section {
     inset: 0;
     margin: auto;
     top: -30%;
+    text-align: center;
 }
 
 .alamat {
@@ -1389,10 +1395,14 @@ section {
     text-align: center;
 }
 
-.gasAlamat a {
+.kotakAlamat a {
+    position: relative;
+    cursor: pointer;
     text-decoration: none;
     color: goldenrod;
     font-size: 1.5rem;
+
+    z-index: 99;
 }
 
 .bungaAlamat {
