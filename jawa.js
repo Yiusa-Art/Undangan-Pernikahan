@@ -11,6 +11,9 @@ const titleContainer = document.getElementById('titleContainer');
 const buka = document.getElementById('buka');
 const kebuka = document.getElementById('pembukaan');
 
+const suara = document.getElementById('suaraMusik')
+const tombolSuara = document.getElementById('bukanBalokBunga')
+
 tombol.addEventListener("click", () => {
     titleContainer.classList == "titleContainer" ? balik() : balikAwal();
 })
@@ -26,9 +29,27 @@ function balikAwal() {
 buka.addEventListener("click", () => {
     document.body.style.overflowY = 'scroll';
     kebuka.scrollIntoView();
+
+    suara.muted = false;
+    tombolSuara.firstChild.style.color = 'goldenrod'
+
+    suara.play()
     setTimeout(() =>{
         buka.remove();
     }, 2000)
+})
+
+///////////////
+
+tombolSuara.addEventListener('click', () => {
+    if (suara.muted == false) {
+        tombolSuara.firstChild.style.color = 'red'
+        suara.muted = true
+    } else {
+        suara.muted = false
+        tombolSuara.firstChild.style.color = 'goldenrod'
+    }
+    
 })
 
 ////////////////////
@@ -216,3 +237,23 @@ function timer() {
 }
 
 setInterval(timer, 1000)
+
+
+/////////////////
+
+const preloader = document.getElementById('preloader')
+const tutupLoading = document.getElementById('tutupLoading')
+const tutupLoading1 = document.getElementById('tutupLoading1')
+const loadingnya = document.getElementById('loadingnya')
+
+window.addEventListener("load", function(){
+
+    loadingnya.style.transform = 'translateY(110vh) rotate(60deg)'
+
+    this.setTimeout(() => {
+        tutupLoading.style.transform = "translateX(110%)"
+        tutupLoading1.style.transform = "translateX(-110%)"
+        preloader.style.display = "none"
+    }, 500)
+
+})

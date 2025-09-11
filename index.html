@@ -25,10 +25,19 @@
     <link rel="icon" href="https://yiusa-art.github.io/Undangan-Pernikahan/gambar/mawar.png"> 
 </head>
 <body>
+
+    <audio muted loop src="musik/musikLatar.mp3" id="suaraMusik"></audio>
+
     
-    <div class="balokBunga"></div>
+    
+    <div id="bukanBalokBunga" class="balokBunga"><p>🕪</p></div>
 
         <section class="layar">
+            <div id="preloader" class="preloader">
+                <div id="tutupLoading" class="tutupLoading"></div>
+                <div id="tutupLoading1" class="tutupLoading1"></div>
+                <div id="loadingnya" class="loadingnya"></div>
+             </div>
 
             <div id="titleContainer" class="titleContainer">
                 <div class="title">
@@ -235,8 +244,6 @@
                 <p>Adi & Ayu Candra</p>
             </div>
 
-            
-
             <div class="bungaAkhir"></div>
             <div class="bungaAkhir1"></div>
             
@@ -249,7 +256,6 @@
         <button id="keKiri"><p>⇦</p></button>
         <button id="keKanan"><p>⇨</p></button>
         <button id="adios"><p>X</p></button>
-
 <script src="jawa.js"></script>
     
 </body>

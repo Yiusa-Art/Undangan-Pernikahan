@@ -150,7 +150,7 @@ section {
 }
 
 .tombolBalik {
-    top: 40vh;
+    top: 50%;
 }
 
 .tombolBalik-active {
@@ -449,38 +449,22 @@ section {
 .balokBunga {
     position: fixed;
     background-color: white;
-    bottom: 3%;
-    left: 1%;
-    width: 5px;
-    height: 200px;
+    bottom: 2%;
+    left: 3%;
+    width: 45px;
+    height: 45px;
     overflow: hidden;
+    border-radius: 50%;
     z-index: 9;
-    border-radius: 2px;
 
 }
 
-.balokBunga::before {
-    content: '';
-    position: absolute;
-    width: 5px;
-    height: 200px;
-    background-color: goldenrod;
-    transform: translate(0%, 100%);
-    animation: numbuh 1s ease-in-out forwards;
-    animation-timeline: scroll(y root);
-
-}
-
-@keyframes numbuh {
-
-    0%{
-        transform: translate(0%, 100%);
-    }
-
-    100%{
-        transform: translate(0%, 0%);
-    }
-    
+.balokBunga p {
+    color: red;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 /* ////////////// */
@@ -1526,4 +1510,72 @@ section {
     background: transparent;
     inset: 0;
     margin: auto;
+}
+
+/* /////// */
+
+
+.preloader {
+    position: fixed;
+    height: 100%;
+    width: 31.188rem;
+    overflow: hidden;
+
+    z-index: 1945;
+}
+
+.tutupLoading {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--base-color);
+    margin: auto;
+    inset: 0;
+    transition: 1s 1s cubic-bezier(1, 0.01, 1, 1.01);
+
+    transform: translateX(48%);
+    
+}
+
+.tutupLoading1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--base-color);
+    margin: auto;
+    inset: 0;
+    transition: 1s 1s cubic-bezier(1, 0.01, 1, 1.01);
+
+    transform: translateX(-48%);
+    
+}
+
+.loadingnya {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    background: url(gambar/sunBunga.gif) no-repeat center center / cover;
+    transition: 1.5s cubic-bezier(0.81, -0.92, 1, 1.24);
+
+    transform: scale(1);
+}
+
+@keyframes flashbang {
+    0% {
+        background-color: var(--base-color);
+    }
+
+    20%{
+        background-color: white;
+    }
+
+    80% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: var(--base-color)
+    }
 }
