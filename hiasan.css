@@ -42,9 +42,10 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     width: 100%;
     height: 100%;
+    min-height: 100%;
 
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -533,6 +534,14 @@ section {
 
 .pembukaanKotakTulisan p {
     padding: 10px;
+    font-size: 1rem;
+}
+
+@media screen and (max-height: 1000px) {
+    .pembukaanKotakTulisan p {
+
+        font-size: 0.8rem;
+    }
 }
 
 .bungaMojok{
@@ -633,7 +642,7 @@ section {
     background: linear-gradient(to top, hsla(from var(--base-color) h s calc(l - 5) / 0.8), hsla(from var(--base-color) h s l / 0));
     left: -70%;
     z-index: 6;
-    bottom: 0%;
+    bottom: -12%;
 }
 
 .peria::before {
@@ -992,6 +1001,7 @@ section {
     line-height: 2rem;
 
     top: 6%;
+    z-index: 10;
 }
 
 .galeri h2::after {
@@ -1003,6 +1013,7 @@ section {
     display: block;
     inset: 0;
     margin: auto;
+    z-index: 10;
 }
 
 .bungaPeot {
@@ -1223,6 +1234,92 @@ section {
     bottom: 0vh;
 }
 
+/* /////////////////////// */
+
+.resepsiContainer {
+    position: relative;
+    width: 31.188rem;
+    height: 100vh;
+    background: linear-gradient(to bottom, hsl(from var(--base-color) h s calc(l - 3)), hsl(from var(--base-color) h s l));
+    inset: 0;
+    margin: auto;
+}
+
+.resepsiContainer h3 {
+    font-size: 4.75vh;
+    font-family: 'Madelican';
+    font-weight: 200;
+    line-height: 1.2rem;
+}
+
+.resepsiContainer h3::after {
+    content: '';
+    width: auto;
+    height: 2px;
+    border-radius: 4px;
+    background-color: goldenrod;
+    display: block;
+    inset: 0;
+    margin: auto;
+    z-index: 10;
+}
+
+.kotakJam{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 3%;
+}
+
+.waktu {
+    text-align: center;
+    box-shadow: 0px 0px 50px 5px black;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 15px;
+    margin-bottom: 4rem;
+}
+
+.waktu::after {
+    content: '';
+    background-color: white;
+    height: 40px;
+    width: 3px;
+    display: block;
+    inset: 0;
+    margin: auto;
+    margin-top: 42%;
+}
+
+.waktu h2 {
+    font-size: 2.5vh;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 15%;
+    
+}
+
+.waktu p {
+    font-size: 1.875vh;
+    font-weight: 200;
+    color: goldenrod;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.kotakJam h4 {
+    margin: 0;
+    font-size: 1.5vh;
+}
+
+.kotakJam h5 {
+    font-size: 1.25vh;
+}
+
 
 
 /* /////////////////// */
@@ -1231,7 +1328,7 @@ section {
     position: relative;
     width: 31.188rem;
     height: 100vh;
-    background: linear-gradient(to bottom, hsl(from var(--base-color) h s calc(l - 3)), hsl(from var(--base-color) h s l));
+    background: linear-gradient(to top, hsl(from var(--base-color) h s calc(l - 3)), hsl(from var(--base-color) h s l));
     inset: 0;
     margin: auto;
 
@@ -1241,6 +1338,7 @@ section {
 
 .alamatContainer h2 {
     font-size: 2rem;
+
 }
 
 /* /////////////////// */
@@ -1253,7 +1351,7 @@ section {
 }
 
 @media screen and (max-width: 499px) {
-    .title, .titleContainer, .titleContainer-muter, .layar, .titleBelakang, section {
+    .title, .titleContainer, .titleContainer-muter, .titleBelakang, section {
         height: 135vh;
     }
 

@@ -24,7 +24,7 @@ function balikAwal() {
     tombol.classList.replace('tombolBalik-active', 'tombolBalik');
 }
 buka.addEventListener("click", () => {
-    document.documentElement.style.overflowY = 'scroll';
+    document.body.style.overflowY = 'scroll';
     kebuka.scrollIntoView();
     setTimeout(() =>{
         buka.remove();
@@ -49,8 +49,16 @@ const menggambar = document.createElement('div')
 let angkaGaleri = ""
 
 const gambarGambar = document.querySelectorAll('div.kotakGambar')
+
 gambarGambar.forEach(gambar => {
     gambar.addEventListener('click', e => {
+        
+        gambarGambar.forEach(gambar => {
+            gambar.style.pointerEvents = 'none'
+        })
+        
+        kiri.disabled = false
+        kanan.disabled = false
         
         setTimeout(() =>{
             cahayaKotak.classList.add('active')
@@ -85,13 +93,22 @@ gambarGambar.forEach(gambar => {
 })
 
 
+
 adios.addEventListener('click', e => {
     // if (e.target !== e.currentTarget && kiri && kanan) return
+
+    kiri.disabled = true
+    kanan.disabled = true
 
     cahayaKotak.classList.remove('active')
     cahayaKotak.style.transform = 'translateY(120vh) rotate(30deg)'
     setTimeout(() =>{
         cahayaKotak.removeChild(cahayaKotak.firstChild)
+
+        gambarGambar.forEach(gambar => {
+            gambar.style.pointerEvents = 'auto'
+        })
+
     }, 1400)
 
     kiri.style.bottom = '-5%'
@@ -173,3 +190,29 @@ kanan.addEventListener('click', () => {
 })
 
 /////////////////////////
+
+const hari = document.getElementById('hari')
+const jam = document.getElementById('jam')
+const menit = document.getElementById('menit')
+const detik = document.getElementById('detik')
+
+const tengat = new Date("September 24 2025 00:00:00").getTime()
+
+function timer() {
+    const sekarang = new Date().getTime();
+    const jarak = tengat - sekarang;
+
+    const harian = Math.floor(jarak / 1000 / 60 / 60 / 24);
+    const jaman = Math.floor(jarak / 1000 / 60 / 60) % 24;
+    const menitan = Math.floor(jarak / 1000 / 60) % 60;
+    const detikkan = Math.floor(jarak / 1000) % 60;
+
+    hari.innerHTML = harian;
+    jam.innerHTML = jaman;
+    menit.innerHTML = menitan;
+    detik.innerHTML = detikkan;
+
+    console.log(hari + ":" + jam + ":" + menit + ":" + detik)
+}
+
+setInterval(timer, 1000)
