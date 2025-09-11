@@ -27,8 +27,7 @@ html {
     font-family: "Lexend Giga", sans-serif;
     font-weight: 200;
     font-style: normal;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    overflow: hidden;
     margin: auto;
     inset: 0;
 
@@ -57,9 +56,6 @@ body {
         height: 200%;
     }
 
-    body {
-        scrollbar-color: transparent transparent;
-    }
 }
 
 
@@ -1272,7 +1268,8 @@ section {
     flex-direction: column;
     align-items: center;
 
-    margin-top: 3%;
+    margin-top: 12%;
+    transition: 0.5s ease-in-out;
 }
 
 .waktu {
@@ -1311,13 +1308,17 @@ section {
     margin-top: 0;
 }
 
-.kotakJam h4 {
+.kotakJam h4 a {
     margin: 0;
-    font-size: 1.5vh;
+    font-size: 2vh;
+    text-decoration: none;
+    cursor: pointer;
+    color: gold;
 }
 
 .kotakJam h5 {
-    font-size: 1.25vh;
+    font-size: 1.5vh;
+    margin: 0;
 }
 
 
@@ -1327,7 +1328,7 @@ section {
 .alamatContainer {
     position: relative;
     width: 31.188rem;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(to top, hsl(from var(--base-color) h s calc(l - 3)), hsl(from var(--base-color) h s l));
     inset: 0;
     margin: auto;
@@ -1337,7 +1338,9 @@ section {
 }
 
 .alamatContainer h2 {
-    font-size: 2rem;
+    position: relative;
+    top: 10%;
+    font-size: 3vh;
 
 }
 
@@ -1357,8 +1360,16 @@ section {
 
     body {
         scroll-snap-type: none;
+        scrollbar-color: transparent transparent;
+        overflow-x: hidden;
     }
     
+}
+
+@media screen and (max-height: 900px) {
+    .kotakJam {
+        margin-top: -2%;
+    }
 }
 
 /* @media screen and (max-width: 375px) {
