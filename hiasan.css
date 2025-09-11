@@ -61,6 +61,7 @@ body {
 
 section {
     scroll-snap-align: start;
+    overflow: hidden;
 }
 
 .layar {
@@ -1321,6 +1322,32 @@ section {
     margin: 0;
 }
 
+.bungaResepsi {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: url(gambar/bungaIntrovet.png) no-repeat center center / 95%;
+
+    transform: rotate(-270deg);
+    top: -2%;
+    right: -10%;
+    opacity: 0.5;
+
+}
+
+.bungaResepsi1 {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: url(gambar/bungaIntrovet.png) no-repeat center center / 95%;
+
+    transform: rotate(270deg);
+    bottom: -2%;
+    left: -10%;
+    opacity: 0.5;
+
+}
+
 
 
 /* /////////////////// */
@@ -1328,34 +1355,93 @@ section {
 .alamatContainer {
     position: relative;
     width: 31.188rem;
-    height: 100%;
+    height: 100vh;
     background: linear-gradient(to top, hsl(from var(--base-color) h s calc(l - 3)), hsl(from var(--base-color) h s l));
     inset: 0;
     margin: auto;
-
-    display: flex;
-    justify-content: center;
 }
 
 .alamatContainer h2 {
     position: relative;
-    top: 10%;
-    font-size: 3vh;
+    font-size: 4.75vh;
+    font-family: 'Madelican';
+    font-weight: 200;
+    line-height: 1rem;
+}
+
+.alamatContainer h2::after {
+    content: '';
+    width: 350px;
+    height: 2px;
+    border-radius: 4px;
+    background-color: goldenrod;
+    display: block;
+    inset: 0;
+    margin: auto;
+    z-index: 10;
+}
+
+.kotakAlamat {
+    position: absolute;
+    width: 70%;
+    height: 40vh;
+    margin-top: 20vh;
+    inset: 0;
+    margin: auto;
+    top: -30%;
+}
+
+.alamat {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: #daa520 2px solid;
+    background: url(gambar/lokasi.png) no-repeat center center / cover;
+
+}
+
+.gasAlamat {
+    text-align: center;
+}
+
+.gasAlamat a {
+    text-decoration: none;
+    color: goldenrod;
+    font-size: 1.5rem;
+}
+
+.bungaAlamat {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: url(gambar/bungaIntrovet.png) no-repeat center center / 95%;
+
+    transform: rotate(-270deg);
+    top: -2%;
+    right: -10%;
+    opacity: 0.5;
+
+}
+
+.bungaAlamat1 {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: url(gambar/bungaIntrovet.png) no-repeat center center / 95%;
+
+    transform: rotate(270deg);
+    bottom: -2%;
+    left: -10%;
+    opacity: 0.5;
 
 }
 
 /* /////////////////// */
 
-@media screen and (min-width: 400px) {
-    .title {
-        height: 120vh;
-    }
-    
-}
-
 @media screen and (max-width: 499px) {
     .title, .titleContainer, .titleContainer-muter, .titleBelakang, section {
         height: 135vh;
+        transition: 1s;
     }
 
     body {
@@ -1372,9 +1458,72 @@ section {
     }
 }
 
-/* @media screen and (max-width: 375px) {
-    .title, .titleContainer, .titleContainer-muter, .layar, .titleBelakang, section {
-        height: 175vh;
-    }
+/* ////////////// */
 
-} */
+
+
+.akhirKata {
+    position: relative;
+    max-width: 31.188rem;
+    height: 100vh;
+    background: linear-gradient(to bottom, hsl(from var(--base-color) h s calc(l - 3)), hsl(from var(--base-color) h s l));
+    inset: 0;
+    margin: auto;
+    overflow: hidden;
+    z-index: -2;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.kotakAkhir {
+    width: 25rem;
+    height: 20rem;
+}
+
+.kotakAkhir p {
+    font-size: 1.3rem;
+}
+
+.kotakAkhir p:nth-child(4) {
+    color: goldenrod;
+}
+
+.bungaAkhir {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: url(gambar/bungaIntrovet.png) no-repeat center center / 95%;
+
+    transform: rotate(-270deg);
+    top: -2%;
+    right: -10%;
+    opacity: 0.5;
+
+}
+
+.bungaAkhir1 {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    background: url(gambar/bungaIntrovet.png) no-repeat center center / 95%;
+
+    transform: rotate(270deg);
+    bottom: -2%;
+    left: -10%;
+    opacity: 0.5;
+
+}
+
+/* ////////// */
+
+.decoy {
+    position: relative;
+    width: 31.188rem;
+    height: 100vh;
+    background: transparent;
+    inset: 0;
+    margin: auto;
+}
