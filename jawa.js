@@ -132,13 +132,13 @@ adios.addEventListener('click', e => {
 
     }, 1400)
 
-    kiri.style.bottom = '-5%'
+    kiri.style.bottom = '-7%'
     kiri.style.transform = 'rotate(50deg)'
 
-    kanan.style.bottom = '-5%'
+    kanan.style.bottom = '-7%'
     kanan.style.transform = 'rotate(-50deg)'
 
-    adios.style.bottom = '-5%'
+    adios.style.bottom = '-7%'
     adios.style.transform = 'rotate(180deg)'
 
     tutupAtas.classList.remove('active')
@@ -249,11 +249,11 @@ const loadingnya = document.getElementById('loadingnya')
 window.addEventListener("load", function(){
 
     loadingnya.style.transform = 'translateY(110vh) rotate(60deg)'
+    tutupLoading.style.transform = 'translateX(110%)'
+    tutupLoading1.style.transform = 'translateX(-110%)'
 
     this.setTimeout(() => {
-        tutupLoading.style.transform = "translateX(110%)"
-        tutupLoading1.style.transform = "translateX(-110%)"
-        preloader.style.display = "none"
-    }, 500)
+        preloader.style.display = 'none'
+    }, 2500)
 
 })

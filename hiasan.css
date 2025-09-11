@@ -68,7 +68,7 @@ section {
     background-color: hsl(from var(--base-color) h s calc(l + 5));
     position: relative;
     max-width: 31.188rem;
-    height: 120vh;
+    height: 120dvh;
     overflow: hidden;
     top: 0;
     margin: 0 auto;
@@ -150,7 +150,7 @@ section {
 }
 
 .tombolBalik {
-    top: 50%;
+    top: 45%;
 }
 
 .tombolBalik-active {
@@ -306,14 +306,14 @@ section {
 .titleKotak {
     width: 100%;
     position: relative;
-    top: -5%;
+    top: -10%;
 }
 
 .tamuKotak {
     position: relative;
     box-shadow: 0px 0px 50px 0.2px black;
-    width: 350px;
-    height: 80px;
+    width: 70%;
+    height: max-content;
     inset: 0;
     margin: auto;
     border-radius: 20px;
@@ -334,6 +334,7 @@ section {
     font-family: "Medino";
     font-size: 1.4rem;
     font-weight: 500;
+    line-height: 2rem;
 }
 
 .kotakOrnament {
@@ -1100,7 +1101,7 @@ section {
     font-size: 1.5rem;
     border-radius: 50%;
 
-    bottom: -5%;
+    bottom: -7%;
     left: 30%;
 
     transition: .8s cubic-bezier(0, 1, 1, 1.01);
@@ -1126,7 +1127,7 @@ section {
     font-size: 1.5rem;
     border-radius: 50%;
 
-    bottom: -5%;
+    bottom: -7%;
     right: 30%;
 
     transition: .8s cubic-bezier(0, 1, 1, 1.01);
@@ -1153,7 +1154,7 @@ section {
     font-size: 1.5rem;
     border-radius: 50%;
 
-    bottom: -5%;
+    bottom: -7%;
     right: 47%;
 
     transition: .8s cubic-bezier(0, 1, 1, 1.01);
@@ -1423,8 +1424,8 @@ section {
 /* /////////////////// */
 
 @media screen and (max-width: 499px) {
-    .title, .titleContainer, .titleContainer-muter, .titleBelakang, section {
-        height: 135vh;
+    .title, .titleContainer, .titleContainer-muter, .layar, .titleBelakang, section {
+        height: 135dvh;
         transition: 1s;
     }
 
