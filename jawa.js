@@ -40,7 +40,13 @@ document.body.appendChild(cahayaKotak)
 const tutupAtas = document.getElementById('tutup')
 const tutupBawah = document.getElementById('tutup1')
 
-let angkaGaleri = 0;
+const kiri = document.getElementById('keKiri')
+const kanan = document.getElementById('keKanan')
+const adios = document.getElementById('adios')
+
+const menggambar = document.createElement('div')
+
+let angkaGaleri = ""
 
 const gambarGambar = document.querySelectorAll('div.kotakGambar')
 gambarGambar.forEach(gambar => {
@@ -48,8 +54,19 @@ gambarGambar.forEach(gambar => {
         
         setTimeout(() =>{
             cahayaKotak.classList.add('active')
+            cahayaKotak.style.transform = 'translateY(0vh) rotate(0deg)'
+
+            kiri.style.bottom = '10%'
+            kiri.style.transform = 'rotate(0deg)'
+
+            kanan.style.bottom = '10%'
+            kanan.style.transform = 'rotate(0deg)'
+
+            adios.style.bottom = '10%'
+            adios.style.transform = 'rotate(0deg)'
+
+            
         }, 600)
-        const menggambar = document.createElement('div')
         tutupAtas.classList.add('active')
         tutupBawah.classList.add('active')
 
@@ -66,17 +83,93 @@ gambarGambar.forEach(gambar => {
         
     })
 })
-cahayaKotak.addEventListener('click', e => {
-    if (e.target !== e.currentTarget) return
+
+
+adios.addEventListener('click', e => {
+    // if (e.target !== e.currentTarget && kiri && kanan) return
 
     cahayaKotak.classList.remove('active')
+    cahayaKotak.style.transform = 'translateY(120vh) rotate(30deg)'
     setTimeout(() =>{
         cahayaKotak.removeChild(cahayaKotak.firstChild)
-    }, 1500)
+    }, 1400)
 
+    kiri.style.bottom = '-5%'
+    kiri.style.transform = 'rotate(50deg)'
+
+    kanan.style.bottom = '-5%'
+    kanan.style.transform = 'rotate(-50deg)'
+
+    adios.style.bottom = '-5%'
+    adios.style.transform = 'rotate(180deg)'
 
     tutupAtas.classList.remove('active')
     tutupBawah.classList.remove('active')
+
+})
+
+kiri.addEventListener('click', () => {
+    angkaGaleri--
+    
+    console.log(angkaGaleri)
+    cahayaKotak.firstChild.style.animation = 'geter 1s'
+    cahayaKotak.firstChild.style.setProperty('--after-warna', 'white')
+    
+    cahayaKotak.style.transform = 'scale(1.2) rotate(-20deg)'
+
+    if (angkaGaleri == 0) {
+        angkaGaleri = 8
+    }
+
+    adios.disabled = true
+
+    setTimeout(() => {
+        angkaGambar = document.getElementById(angkaGaleri)
+        console.log(angkaGambar)
+
+        const gambarBaru = window.getComputedStyle(angkaGambar)
+        const gantiGambar = gambarBaru.getPropertyValue('background-image')
+
+        menggambar.style.backgroundImage = gantiGambar
+
+        cahayaKotak.style.transform = 'scale(1) rotate(0deg)'
+        cahayaKotak.firstChild.style.setProperty('--after-warna', 'transparent')
+        cahayaKotak.firstChild.style.animation = ''
+        adios.disabled = false
+        
+    }, 1100)
+})
+
+kanan.addEventListener('click', () => {
+    angkaGaleri++
+    
+    console.log(angkaGaleri)
+    cahayaKotak.firstChild.style.animation = 'geter 1s'
+    cahayaKotak.firstChild.style.setProperty('--after-warna', 'white')
+    
+    cahayaKotak.style.transform = 'scale(1.2) rotate(20deg)'
+
+    if (angkaGaleri == 9) {
+        angkaGaleri = 1
+    }
+
+    adios.disabled = true
+
+    setTimeout(() => {
+        angkaGambar = document.getElementById(angkaGaleri)
+        console.log(angkaGambar)
+
+        const gambarBaru = window.getComputedStyle(angkaGambar)
+        const gantiGambar = gambarBaru.getPropertyValue('background-image')
+
+        menggambar.style.backgroundImage = gantiGambar
+
+        cahayaKotak.style.transform = 'scale(1) rotate(0deg)'
+        cahayaKotak.firstChild.style.setProperty('--after-warna', 'transparent')
+        cahayaKotak.firstChild.style.animation = ''
+        adios.disabled = false
+        
+    }, 1100)
 })
 
 /////////////////////////
