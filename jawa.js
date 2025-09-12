@@ -58,6 +58,10 @@ const cahayaKotak = document.createElement('div')
 cahayaKotak.id = 'cahayaKotak'
 document.body.appendChild(cahayaKotak)
 
+const flashbang = document.createElement('div')
+flashbang.id = 'flash'
+cahayaKotak.appendChild(flashbang)
+
 const tutupAtas = document.getElementById('tutup')
 const tutupBawah = document.getElementById('tutup1')
 
@@ -65,7 +69,7 @@ const kiri = document.getElementById('keKiri')
 const kanan = document.getElementById('keKanan')
 const adios = document.getElementById('adios')
 
-const menggambar = document.createElement('div')
+const menggambar = document.createElement('img')
 
 let angkaGaleri = ""
 
@@ -103,9 +107,11 @@ gambarGambar.forEach(gambar => {
         cahayaKotak.appendChild(menggambar)
         const isi = window.getComputedStyle(gambar)
         const isian = isi.getPropertyValue('background-image')
+        const isianBeneran = gambar.firstChild.getAttribute('src')
         
         menggambar.style.backgroundSize = isi.getPropertyValue('background-size')
         menggambar.style.backgroundImage = isian
+        menggambar.src= isianBeneran
 
         angkaGaleri = gambar.getAttribute('id')
 
@@ -130,8 +136,8 @@ adios.addEventListener('click', e => {
 
     cahayaKotak.classList.remove('active')
     cahayaKotak.style.transform = 'translateY(120vh) rotate(30deg)'
-    setTimeout(() =>{
-        cahayaKotak.removeChild(cahayaKotak.firstChild)
+    setTimeout(() =>{   
+        cahayaKotak.removeChild(menggambar)
 
         gambarGambar.forEach(gambar => {
             gambar.style.pointerEvents = 'auto'
@@ -155,9 +161,14 @@ adios.addEventListener('click', e => {
 
 kiri.addEventListener('click', () => {
     angkaGaleri--
-    
-    cahayaKotak.firstChild.style.animation = 'geter 1s'
-    cahayaKotak.firstChild.style.setProperty('--after-warna', 'white')
+
+    const flashAmbil = window.getComputedStyle(menggambar)
+    const flashRatio = flashAmbil.getPropertyValue('aspect-ratio')
+    flashbang.style.aspectRatio = flashRatio
+
+    menggambar.style.animation = 'geter 1s'
+    flashbang.style.animation = 'geter 1s'
+    flashbang.style.backgroundColor = 'white'
     
     cahayaKotak.style.transform = 'scale(1.2) rotate(-20deg)'
 
@@ -173,17 +184,23 @@ kiri.addEventListener('click', () => {
         if (angkaGaleri == 1 || angkaGaleri == 5) {
         menggambar.style.aspectRatio = '1.503 / 1'
         } else {
-            menggambar.style.aspectRatio = '131 / 200'
+        menggambar.style.aspectRatio = '131 / 200'
         }
 
         const gambarBaru = window.getComputedStyle(angkaGambar)
         const gantiGambar = gambarBaru.getPropertyValue('background-image')
 
+        const gantiBeneran = angkaGambar.firstChild
+        const beneranRil = gantiBeneran.src
+
         menggambar.style.backgroundImage = gantiGambar
 
         cahayaKotak.style.transform = 'scale(1) rotate(0deg)'
-        cahayaKotak.firstChild.style.setProperty('--after-warna', 'transparent')
-        cahayaKotak.firstChild.style.animation = ''
+        menggambar.style.animation = ''
+        flashbang.style.animation = ''
+        flashbang.style.backgroundColor = ''
+
+        menggambar.src = beneranRil
         adios.disabled = false
         
     }, 1100)
@@ -192,8 +209,13 @@ kiri.addEventListener('click', () => {
 kanan.addEventListener('click', () => {
     angkaGaleri++
 
-    cahayaKotak.firstChild.style.animation = 'geter 1s'
-    cahayaKotak.firstChild.style.setProperty('--after-warna', 'white')
+    const flashAmbil = window.getComputedStyle(menggambar)
+    const flashRatio = flashAmbil.getPropertyValue('aspect-ratio')
+    flashbang.style.aspectRatio = flashRatio
+
+    menggambar.style.animation = 'geter 1s'
+    flashbang.style.animation = 'geter 1s'
+    flashbang.style.backgroundColor = 'white'
     
     cahayaKotak.style.transform = 'scale(1.2) rotate(20deg)'
 
@@ -215,11 +237,19 @@ kanan.addEventListener('click', () => {
         const gambarBaru = window.getComputedStyle(angkaGambar)
         const gantiGambar = gambarBaru.getPropertyValue('background-image')
 
+        const gantiBeneran = angkaGambar.firstChild
+        const beneranRil = gantiBeneran.src
+
         menggambar.style.backgroundImage = gantiGambar
 
         cahayaKotak.style.transform = 'scale(1) rotate(0deg)'
         cahayaKotak.firstChild.style.setProperty('--after-warna', 'transparent')
         cahayaKotak.firstChild.style.animation = ''
+        flashbang.style.animation = ''
+        flashbang.style.backgroundColor = ''
+        menggambar.style.animation = ''
+
+        menggambar.src = beneranRil
         adios.disabled = false
         
     }, 1100)
