@@ -108,6 +108,13 @@ gambarGambar.forEach(gambar => {
         menggambar.style.backgroundImage = isian
 
         angkaGaleri = gambar.getAttribute('id')
+
+        if (angkaGaleri == 1 || angkaGaleri == 5) {
+        menggambar.style.aspectRatio = '1.503 / 1'
+        } else {
+            menggambar.style.aspectRatio = '131 / 200'
+        }
+
         console.log(angkaGaleri)
         
     })
@@ -149,7 +156,6 @@ adios.addEventListener('click', e => {
 kiri.addEventListener('click', () => {
     angkaGaleri--
     
-    console.log(angkaGaleri)
     cahayaKotak.firstChild.style.animation = 'geter 1s'
     cahayaKotak.firstChild.style.setProperty('--after-warna', 'white')
     
@@ -163,7 +169,12 @@ kiri.addEventListener('click', () => {
 
     setTimeout(() => {
         angkaGambar = document.getElementById(angkaGaleri)
-        console.log(angkaGambar)
+
+        if (angkaGaleri == 1 || angkaGaleri == 5) {
+        menggambar.style.aspectRatio = '1.503 / 1'
+        } else {
+            menggambar.style.aspectRatio = '131 / 200'
+        }
 
         const gambarBaru = window.getComputedStyle(angkaGambar)
         const gantiGambar = gambarBaru.getPropertyValue('background-image')
@@ -180,8 +191,7 @@ kiri.addEventListener('click', () => {
 
 kanan.addEventListener('click', () => {
     angkaGaleri++
-    
-    console.log(angkaGaleri)
+
     cahayaKotak.firstChild.style.animation = 'geter 1s'
     cahayaKotak.firstChild.style.setProperty('--after-warna', 'white')
     
@@ -195,7 +205,12 @@ kanan.addEventListener('click', () => {
 
     setTimeout(() => {
         angkaGambar = document.getElementById(angkaGaleri)
-        console.log(angkaGambar)
+
+        if (angkaGaleri == 1 || angkaGaleri == 5) {
+            menggambar.style.aspectRatio = '1.503 / 1'
+        } else {
+            menggambar.style.aspectRatio = '131 / 200'
+        }
 
         const gambarBaru = window.getComputedStyle(angkaGambar)
         const gantiGambar = gambarBaru.getPropertyValue('background-image')

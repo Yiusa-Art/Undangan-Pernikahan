@@ -1032,13 +1032,16 @@ section {
     align-items: center;
     position: fixed;
     z-index: 1000;
-    width: 31.188rem;
-    height: 130vh;
+    width: 100%;
+    height: 100%;
     inset: 0;
     margin: auto;
     transition: 1.5s cubic-bezier(0.47, -0.77, 1, 0.98);
     display: flex;
     overflow: hidden;
+
+    max-width: 31.888rem;
+    max-height: 130vh;
 
     transform: translateY(120vh) rotate(30deg);
 }
@@ -1049,12 +1052,16 @@ section {
     align-items: center;
     position: fixed;
     z-index: 1000;
-    width: 31.188rem;
-    height: 130vh;
+    width: 100%;
+    height: 100%;
     inset: 0;
     margin: auto;
     transition: 1.8s cubic-bezier(0, 1, 1, 1.01);
     overflow: hidden;
+
+    max-width: 31.888rem;
+    max-height: 130vh;
+
 
     transform: translateY(0vh) rotate(0deg);
 
@@ -1086,8 +1093,6 @@ section {
 }
 
 #menggambar {
-    width: 90%;
-    height: 40%;
     border: 7px white solid;
     background-position: center center;
 }
@@ -1453,6 +1458,16 @@ section {
     }
 }
 
+@media screen and (max-height: 1000px) {
+    #menggambar {
+        /* height: 100%; */
+    }
+}
+
+#menggambar {
+    background-position: center center;
+    width: 100%;
+}
 /* ////////////// */
 
 
