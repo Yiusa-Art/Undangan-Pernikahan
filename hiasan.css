@@ -1521,6 +1521,7 @@ section {
 
 .kotakAkhir p {
     font-size: 1.3rem;
+    color: goldenrod;
 }
 
 .kotakAkhir p:nth-child(4) {
