@@ -294,11 +294,67 @@ const loadingnya = document.getElementById('loadingnya')
 window.addEventListener("load", function(){
 
     loadingnya.style.transform = 'translateY(110vh) rotate(60deg)'
-    tutupLoading.style.transform = 'translateX(110%)'
-    tutupLoading1.style.transform = 'translateX(-110%)'
+    
+    this.setTimeout(() => {
+        tutupLoading.style.transform = 'translateX(110%)'
+        tutupLoading1.style.transform = 'translateX(-110%)'
+    }, 1000)
 
     this.setTimeout(() => {
         preloader.style.display = 'none'
     }, 2500)
 
 })
+
+///////////////
+const tutupKalender = document.getElementById('tombolKalender')
+const tutupAlamat = document.getElementById('tombolLokasi')
+
+tutupKalender.addEventListener('click', () => {
+    tutup()
+})
+
+tutupAlamat.addEventListener('click', () => {
+    tutup1()
+})
+
+
+function tutup() {
+
+    preloader.style.display = 'block'
+    
+    setTimeout(() => {
+    tutupLoading.style.transform = 'translateX(48%)'
+    tutupLoading1.style.transform = 'translateX(-48%)'
+    }, 300)
+
+    setTimeout(() =>{
+        window.location.href = "https://calendar.google.com/calendar/u/0/r/eventedit?text=Pernikahan%20Adi%20dan%20Ayu%20Candra&dates=20250924T0209%2F20250924T0209&details=&location=Kediaman%20mempelai%20wanita"
+    }, 1300)
+
+    setTimeout(() =>{
+        tutupLoading.style.transform = 'translateX(110%)'
+        tutupLoading1.style.transform = 'translateX(-110%)'
+        preloader.style.display = 'none'
+    }, 2000)
+}
+
+function tutup1() {
+
+    preloader.style.display = 'block'
+    
+    setTimeout(() => {
+    tutupLoading.style.transform = 'translateX(48%)'
+    tutupLoading1.style.transform = 'translateX(-48%)'
+    }, 300)
+
+    setTimeout(() =>{
+        window.location.href = "https://maps.app.goo.gl/AL6pMEhPU1wZk9Zm9"
+    }, 1300)
+
+    setTimeout(() =>{
+        tutupLoading.style.transform = 'translateX(110%)'
+        tutupLoading1.style.transform = 'translateX(-110%)'
+        preloader.style.display = 'none'
+    }, 2000)
+}

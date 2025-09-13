@@ -41,7 +41,7 @@ body {
     margin: 0;
     position: relative;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: hidden;
     width: 100%;
     height: 100%;
     min-height: 100%;
@@ -1325,13 +1325,18 @@ section {
 
 .kotakJam a {
     cursor: pointer;
+    text-align: center;
     margin: 0;
     margin-bottom: 1rem;
-    font-size: 2vh;
+    width: 30.5vh;
+    font-size: 1.7vh;
     text-decoration: none;
     cursor: pointer;
-    color: gold;
+    color: white;
     text-decoration: none;
+    background-color: goldenrod;
+    border: 1px white solid;
+    border-radius: 20px;
 
     z-index: 10;
 }
@@ -1425,11 +1430,18 @@ section {
 }
 
 .kotakAlamat a {
+    display: block;
+    width: 20vh;
     position: relative;
     cursor: pointer;
     text-decoration: none;
-    color: goldenrod;
-    font-size: 1.5rem;
+    color: white;
+    background-color: goldenrod;
+    border-radius: 20px;
+    border: 1px white solid;
+    font-size: 1.5vh;
+    left: 50%;
+    transform: translateX(-50%);
 
     z-index: 99;
 }
@@ -1571,7 +1583,7 @@ section {
     background-color: var(--base-color);
     margin: auto;
     inset: 0;
-    transition: 1s 1s cubic-bezier(1, 0.01, 1, 1.01);
+    transition: 1s cubic-bezier(1, 0.01, 1, 1.01);
 
     transform: translateX(48%);
     
@@ -1584,7 +1596,7 @@ section {
     background-color: var(--base-color);
     margin: auto;
     inset: 0;
-    transition: 1s 1s cubic-bezier(1, 0.01, 1, 1.01);
+    transition: 1s cubic-bezier(1, 0.01, 1, 1.01);
 
     transform: translateX(-48%);
     
