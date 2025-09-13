@@ -1557,9 +1557,9 @@ section {
 
 .decoy {
     position: relative;
+    background-color: var(--base-color);
     width: 31.188rem;
     height: 100vh;
-    background: transparent;
     inset: 0;
     margin: auto;
 }
