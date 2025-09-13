@@ -173,7 +173,7 @@ kiri.addEventListener('click', () => {
     cahayaKotak.style.transform = 'scale(1.2) rotate(-20deg)'
 
     if (angkaGaleri == 0) {
-        angkaGaleri = 8
+        angkaGaleri = 24
     }
 
     adios.disabled = true
@@ -219,7 +219,7 @@ kanan.addEventListener('click', () => {
     
     cahayaKotak.style.transform = 'scale(1.2) rotate(20deg)'
 
-    if (angkaGaleri == 9) {
+    if (angkaGaleri == 25) {
         angkaGaleri = 1
     }
 
